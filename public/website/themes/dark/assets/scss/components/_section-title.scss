@@ -1,0 +1,50 @@
+/*********************************
+/*  Section Tittle Start
+*********************************/
+.section__title {
+	// max-width: 793px;
+	max-width: 750px;
+	margin: 0 auto 60px;
+
+	.title {
+		font-family: var(--font-default);
+		font-size: 40px;
+		line-height: 48px;
+		font-weight: var(--font-bold);
+		color: var(--color-heading);
+		margin-bottom: 0;
+		text-transform: capitalize;
+
+		@include respond(tabport) {
+			font-size: 32px;
+			line-height: 48px;
+		}
+
+		@include respond(phone-sm) {
+			font-size: 30px;
+			line-height: 40px;
+		}
+		@include respond(phone-mid) {
+			font-size: 24px;
+			line-height: 28px;
+		}
+	}
+	p,
+	.desc {
+		font-family: var(--font-default);
+		font-size: 18px;
+		font-weight: var(--font-regular);
+		line-height: 27px;
+			color: var(--color-content);
+		letter-spacing: 0.5px;
+		margin: 24px 0 0;
+
+		@include respond(phone-sm) {
+			margin: 15px 0 0;
+		}
+	}
+}
+
+/*********************************
+/*  Section Tittle End
+*********************************/

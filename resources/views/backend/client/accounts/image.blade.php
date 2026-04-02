@@ -1,0 +1,1 @@
+<img src="{{ getFileLink('original_image', @$account->image['images']) }}" width="50" alt="{{ $account->name }}">

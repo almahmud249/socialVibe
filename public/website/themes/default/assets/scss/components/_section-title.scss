@@ -1,0 +1,74 @@
+/*********************************
+/*  Section Tittle Start
+*********************************/
+.section__title {
+	&-wrapper {
+		max-width: 530px;
+		margin-bottom: 32px;
+
+		&.flex-item {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			gap: 10px;
+			max-width: 100%;
+			margin-bottom: 32px;
+			position: relative;
+
+			.title {
+				margin-bottom: 0;
+			}
+
+			@include respond(tabland) {
+				display: block;
+				text-align: center;
+
+				.title {
+					margin-bottom: 16px;
+				}
+			}
+		}
+		&.text-center {
+			margin: 0 auto 32px;
+		}
+	}
+
+	.subtitle {
+		font-family: var(--font-default);
+		font-size: 16px;
+		font-weight: var(--font-regular);
+		line-height: 24px;
+		color: var(--color-white);
+		text-transform: capitalize;
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		gap: 10px;
+		background: var(--color-heading2);
+		border-radius: 30px;
+		padding: 6px 16px;
+		margin-bottom: 20px;
+	}
+
+	.title {
+		font-family: var(--font-default);
+		font-size: 28px;
+		line-height: 40px;
+		font-weight: var(--font-medium);
+		color: var(--color-heading);
+		margin: 0;
+	}
+	p,
+	.desc {
+		font-family: var(--font-default);
+		font-size: 16px;
+		font-weight: var(--font-regular);
+		line-height: 24px;
+		color: var(--color-heading2);
+		margin: 24px 0 0;
+	}
+}
+
+/*********************************
+/*  Section Tittle End
+*********************************/

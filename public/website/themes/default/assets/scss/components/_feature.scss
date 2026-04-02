@@ -1,0 +1,84 @@
+/*********************************
+/*  Feature Section Start
+*********************************/
+.featureBox {
+	background: var(--color-bg);
+	display: flex;
+	gap: 15px;
+	padding: 20px;
+	height: calc(100% - 20px);
+	margin-bottom: 20px;
+	border-radius: var(--radius);
+	transition: var(--transition);
+	position: relative;
+	z-index: 1;
+
+	&__icon {
+		height: 50px;
+		width: 50px;
+		background: var(--color-white);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: var(--transition);
+
+		svg {
+			width: 24px;
+			path {
+				fill: var(--color-content);
+				transition: var(--transition);
+			}
+		}
+	}
+	&__content {
+		flex: 1;
+		.title {
+			font-family: var(--font-default);
+			font-size: 20px;
+			line-height: 20px;
+			font-weight: var(--font-medium);
+			color: var(--color-heading2);
+			margin-bottom: 0;
+			transition: var(--transition);
+
+			@include respond(tabport) {
+				font-size: 18px;
+			}
+		}
+		.desc {
+			font-family: var(--font-default);
+			font-weight: var(--font-regular);
+			font-size: 16px;
+			line-height: 24px;
+			margin: 12px 0 0;
+			color: var(--color-content);
+			transition: var(--transition);
+		}
+	}
+	&.active,
+	&:hover {
+		background: var(--color-primary);
+
+		.featureBox {
+			&__icon {
+				background: rgba(var(--color-white-rgb), 0.2);
+
+				svg path {
+					fill: var(--color-white);
+				}
+			}
+			&__content {
+				.title {
+					color: var(--color-white);
+				}
+				.desc {
+					color: var(--color-white);
+				}
+			}
+		}
+	}
+}
+/*********************************
+/*  Feature Section End
+*********************************/

@@ -1,0 +1,197 @@
+/*********************************
+/*  Pricing Section Start
+*********************************/
+
+.pricing__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 27px;
+
+	@include respond(tabland) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@include respond(phone) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+.pricing__item {
+	padding: 40px 30px;
+	background: #f6fafa;
+	border-radius: var(--radius);
+	transition: var(--transition);
+
+	@include respond(tabport) {
+		padding: 30px 20px;
+	}
+
+	.pricing {
+		&__header {
+			font-family: var(--font-default);
+			margin-bottom: 20px;
+
+			.title {
+				font-size: 20px;
+				line-height: 18px;
+				font-weight: var(--font-medium);
+				margin-bottom: 16px;
+				text-transform: capitalize;
+				color: var(--color-heading2);
+				transition: var(--transition);
+
+				@include respond(phone-sm) {
+					font-size: 18px;
+				}
+			}
+			p,
+			.desc {
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: var(--font-regular);
+				margin-bottom: 0;
+				transition: var(--transition);
+			}
+		}
+		&__tag {
+			padding-bottom: 24px;
+			margin-bottom: 24px;
+			border-bottom: 1px solid var(--color-border);
+
+			span {
+				font-family: var(--font-default);
+				font-size: 28px;
+				line-height: 40px;
+				font-weight: var(--font-medium);
+				color: var(--color-heading);
+				display: inline-flex;
+				align-items: baseline;
+				position: relative;
+				gap: 2px;
+				transition: var(--transition);
+
+				sub {
+					font-size: 16px;
+					line-height: 18px;
+					font-weight: var(--font-regular);
+					color: var(--color-black);
+					position: relative;
+					bottom: 0px;
+					transition: var(--transition);
+				}
+			}
+		}
+
+		&__features {
+			li {
+				font-family: var(--font-default);
+				font-size: 16px;
+				line-height: 24px;
+				font-weight: var(--font-regular);
+				color: var(--color-content);
+				display: flex;
+				align-items: center;
+				gap: 14px;
+				margin-bottom: 12px;
+				transition: var(--transition);
+
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+
+				i {
+					font-size: 22px;
+					color: var(--color-primary);
+					transition: var(--transition);
+
+					@include respond(tabport) {
+						font-size: 16px;
+					}
+				}
+			}
+		}
+		&__btn {
+			margin-top: 36px;
+		}
+	}
+	&.active,
+	&:hover {
+		background: var(--color-primary);
+
+		.pricing {
+			&__header {
+				.title {
+					color: var(--color-white);
+				}
+				p,
+				.desc {
+					color: var(--color-white);
+				}
+			}
+			&__tag {
+				border-color: rgba(var(--color-white-rgb), 0.2);
+				span {
+					color: var(--color-white);
+
+					sub {
+						color: var(--color-white);
+					}
+				}
+			}
+			&__features {
+				li {
+					color: rgba(var(--color-white-rgb), 0.7);
+					i {
+						color: var(--color-white);
+					}
+				}
+			}
+			&__btn {
+				.btn {
+					background: var(--color-white);
+					color: var(--color-primary);
+				}
+			}
+		}
+	}
+}
+
+/*********************************
+/*  Pricing Section End
+*********************************/
+
+/*********************************
+/* Tabs Start
+*********************************/
+.custom__tabs {
+	.nav {
+		border: 1px solid var(--color-border);
+		padding: 10px;
+		border-radius: 30px;
+		display: inline-flex;
+		flex-wrap: nowrap;
+		margin-bottom: 26px;
+
+		li {
+			.nav-link {
+				font-family: var(--font-default);
+				font-size: 16px;
+				font-weight: var(--font-regular);
+				line-height: 18px;
+				padding: 11px 16px;
+				background: transparent;
+				color: var(--color-content);
+				border: none;
+				border-radius: 30px;
+				text-transform: capitalize;
+
+				&.active {
+					background: var(--color-heading);
+					color: var(--color-white);
+				}
+			}
+		}
+	}
+}
+
+/*********************************
+/* Tabs End
+*********************************/

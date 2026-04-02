@@ -1,0 +1,67 @@
+/*********************************
+/* Clients Area Start
+*********************************/
+.clients__area {
+	padding: 33px 0;
+	.clients__content {
+		display: flex;
+		align-items: center;
+		gap: 60px;
+		overflow: hidden;
+		position: relative;
+		height: 100%;
+
+		.title {
+			font-family: var(--font-default);
+			font-weight: var(--font-semibold);
+			font-size: 16px;
+			line-height: 18px;
+			margin: 0;
+			min-width: 100px;
+			color: var(--color-heading);
+			background: var(--color-white);
+			z-index: 9;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			white-space: nowrap;
+		}
+
+		.clients__wrapper {
+			flex: 1;
+			display: flex;
+			gap: 40px;
+			animation: slide-har 35s linear infinite;
+			transition: animation-duration 300ms;
+
+			&:hover {
+				animation-play-state: paused;
+			}
+
+			.clients__item {
+				white-space: nowrap;
+				position: relative;
+				display: flex;
+				align-items: center;
+
+				img {
+					width: auto;
+					height: 40px;
+				}
+			}
+		}
+	}
+}
+
+@keyframes slide-har {
+	0% {
+		transform: translateX(0%);
+	}
+
+	100% {
+		transform: translateX(-50%);
+	}
+}
+/*********************************
+/* Clients Area End
+*********************************/

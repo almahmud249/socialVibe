@@ -1,0 +1,127 @@
+/*********************************
+/*  Common Css Start
+*********************************/
+.border-none {
+	border: none !important;
+}
+
+.bg-white {
+	background-color: var(--color-white) !important;
+}
+.bg-dark {
+	background-color: var(--color-heading) !important;
+}
+
+.text-primary {
+	color: var(--color-primary) !important;
+}
+
+/*********************************
+/*  Input Apperance Start
+*********************************/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	border-radius: 4px;
+	margin-right: 2px;
+	// -webkit-filter: invert(1);
+	// filter: invert(1);
+}
+/*********************************
+/*  Input Apperance End
+*********************************/
+
+/*********************************
+/*  Custom Scroll Bar Css
+*********************************/
+::-webkit-scrollbar {
+	width: 4px;
+	height: 4px;
+	border-radius: var(--radius-8);
+}
+
+::-webkit-scrollbar-track {
+	background-color: #ddd;
+	// border-radius: $radius;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(var(--color-primary-rgb), 0.8);
+}
+/*********************************
+/*  Custom Scroll Bar Css
+*********************************/
+
+/*********************************
+/*  row Custom
+*********************************/
+.row > * {
+	max-width: 100%;
+	padding-right: calc(var(--bs-gutter-x) * 0.6);
+	padding-left: calc(var(--bs-gutter-x) * 0.6);
+	margin-top: var(--bs-gutter-y);
+}
+
+@media (min-width: 479px) and (max-width: 575px) {
+	.col-xs-6 {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+}
+
+/*********************************
+/*  Heading Typography
+*********************************/
+h1 {
+	font-family: var(--font-default);
+	font-size: 46px;
+	line-height: 60px;
+	font-weight: var(--font-bold);
+	color: var(--color-heading);
+
+	@include respond(tabport) {
+		font-size: 38px;
+		line-height: 50px;
+	}
+	@include respond(phone) {
+		font-size: 36px;
+		line-height: 50px;
+	}
+	@include respond(phone-xm) {
+		font-size: 28px;
+		line-height: 36px;
+	}
+}
+h2 {
+	font-family: var(--font-default);
+	font-size: 28px;
+	line-height: 40px;
+	font-weight: var(--font-medium);
+	color: var(--color-heading);
+}
+h3 {
+	font-family: var(--font-default);
+	font-size: 24px;
+	line-height: 32px;
+	font-weight: var(--font-medium);
+	color: var(--color-heading);
+}
+
+/*********************************
+/*  Content Typography
+*********************************/
+p {
+	font-family: var(--font-default);
+	font-size: 16px;
+	font-weight: var(--font-regular);
+	line-height: 24px;
+	color: var(--color-content);
+}

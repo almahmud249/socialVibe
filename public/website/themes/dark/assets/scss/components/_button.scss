@@ -1,0 +1,72 @@
+/*********************************
+/*  Button Start
+*********************************/
+
+.btn {
+	font-family: var(--font-default);
+	font-size: 15px;
+	line-height: 24px;
+	font-weight: var(--font-medium);
+	// letter-spacing: 0.5px;
+	letter-spacing: 0.2px;
+	padding: 10px 20px;
+	border-radius: var(--radius);
+	border: none;
+	outline: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	text-transform: capitalize;
+	transition: var(--transition);
+
+	i {
+		font-size: 15px;
+	}
+
+	&:focus {
+		box-shadow: none;
+		outline: none;
+	}
+
+	&-primary {
+		background-color: var(--color-primary);
+		border: 1px solid var(--color-primary);
+		color: var(--color-white);
+
+		&:focus,
+		&:hover {
+			background-color:var(--color-black);
+			color: rgba(var(--color-white-rgb), 0.87);
+			border: 1px solid rgba(var(--color-white-rgb), 0.02);
+			box-shadow: none;
+		}
+	}
+	&-secondary {
+		background-color: rgba(var(--color-white-rgb), 0.2);
+		color: rgba(var(--color-white-rgb), 0.87);
+		border: 1px solid rgba(var(--color-white-rgb), 0.02);
+
+
+		&:focus,
+		&:hover {
+			background: var(--color-primary);
+			color: var(--color-white);
+			border-color: var(--color-primary);
+		}
+	}
+}
+
+.solid__btn {
+	font-family: var(--font-default);
+	font-size: 16px;
+	line-height: 24px;
+	font-weight: var(--font-semibold);
+	letter-spacing: 0.5px;
+	color: var(--color-heading);
+	transition: var(--transition);
+
+	&:hover {
+		color: var(--color-primary);
+	}
+}

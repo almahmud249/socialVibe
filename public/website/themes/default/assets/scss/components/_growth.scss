@@ -1,0 +1,139 @@
+/*********************************
+/*  Growth Section Start
+*********************************/
+.custom__accordion {
+	margin-right: 40px;
+
+	@include respond(tabland) {
+		margin: 0;
+	}
+	&.v2 {
+		max-width: 1000px;
+		margin: auto;
+		background: rgba(var(--color-primary-rgb), 0.1);
+		padding: 60px;
+		border-radius: var(--radius);
+
+		@include respond(tabport) {
+			padding: 60px 30px;
+		}
+
+		.accordion {
+			&-button {
+				&:not(.collapsed) {
+					color: var(--color-heading2);
+					background: var(--color-white);
+					box-shadow: none;
+				}
+
+				&::before {
+					background: var(--color-white);
+				}
+			}
+			&-body {
+				background: var(--color-white);
+			}
+		}
+	}
+	.accordion {
+		&-item {
+			background-color: transparent;
+			border: none;
+			margin-bottom: 10px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		&-header {
+			background-color: transparent;
+		}
+		&-button {
+			font-family: var(--font-default);
+			font-weight: var(--font-medium);
+			font-size: 20px;
+			line-height: 26px;
+			color: var(--color-heading2);
+			padding: 20px 16px 10px;
+			display: flex;
+			gap: 16px;
+			border-radius: 6px 6px 0 0 !important;
+			background-color: transparent;
+
+			@include respond(phone) {
+				font-size: 18px;
+			}
+
+			&:not(.collapsed) {
+				color: var(--color-heading2);
+				background: #f6fafa;
+				box-shadow: none;
+
+				&::before {
+					content: "\f1af";
+					background: var(--color-primary);
+					color: var(--color-white);
+					font-size: 18px;
+				}
+			}
+
+			&:focus {
+				box-shadow: none;
+			}
+
+			&::after {
+				display: none;
+			}
+			&::before {
+				content: "\f4b2";
+				position: relative;
+				left: 0;
+				min-width: 30px;
+				height: 30px;
+				font-size: 16px;
+				color: var(--color-content);
+				background: rgba(var(--color-primary-rgb), 0.1);
+				border-radius: 50%;
+				font-family: "remixicon";
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		&-body {
+			padding: 0px 16px 20px 60px;
+			border-bottom: 2px solid rgba(var(--color-primary-rgb), 0.5);
+			background: #f6fafa;
+			box-shadow: none;
+			.desc {
+				font-family: var(--font-default);
+				font-weight: var(--font-regular);
+				font-size: 16px;
+				line-height: 24px;
+				color: var(--color-content);
+				margin: 0;
+			}
+		}
+	}
+}
+
+.growth__thumb {
+	width: 100%;
+	height: auto;
+	display: block;
+
+	@include respond(tabland) {
+		max-width: 500px;
+		margin: 0 auto 30px;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: var(--radius);
+	}
+}
+/*********************************
+/*  Growth Section End
+*********************************/
