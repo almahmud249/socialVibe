@@ -121,30 +121,7 @@ class SettingSeeder extends Seeder
                 'created_at' => $now,
                 'updated_at' => $now,
             ],
-            [
-                'title'      => 'stripe_key',
-                'value'      => '""',
-                'status'     => 1,
-                'lang'       => 'en',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'title'      => 'stripe_secret',
-                'value'      => '""',
-                'status'     => 1,
-                'lang'       => 'en',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
-            [
-                'title'      => 'is_stripe_activated',
-                'value'      => '"1"',
-                'status'     => 1,
-                'lang'       => 'en',
-                'created_at' => $now,
-                'updated_at' => $now,
-            ],
+
             [
                 'title'      => 'payment_method',
                 'value'      => '"paypal"',
