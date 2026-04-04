@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class PGRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class PGRequest extends FormRequest
 
     public function rules(): array
     {
-        return [
+        $rules = [
             'aamrapay_store_id'              => 'required_if:payment_method,aamarpay',
             'aamarpay_signature_key'         => 'required_if:payment_method,aamarpay',
             'bkash_app_secret'               => 'required_if:payment_method,bkash',
@@ -58,11 +59,21 @@ class PGRequest extends FormRequest
             'skrill_merchant_email'          => 'required_if:payment_method,skrill',
             'sslcommerz_id'                  => 'required_if:payment_method,sslcommerz',
             'sslcommerz_password'            => 'required_if:payment_method,sslcommerz',
-            'stripe_key'                     => 'required_if:payment_method,stripe',
-            'stripe_secret'                  => 'required_if:payment_method,stripe',
             'telr_store_id'                  => 'required_if:payment_method,telr',
             'telr_auth_key'                  => 'required_if:payment_method,telr',
             'uddokta_pay_api_key'            => 'required_if:payment_method,uddokta_pay',
         ];
+
+        $shouldRequireStripeCredentials = $this->input('payment_method') === 'stripe'
+            && (
+                (bool) setting('is_stripe_activated')
+                || filled($this->input('stripe_key'))
+                || filled($this->input('stripe_secret'))
+            );
+
+        $rules['stripe_key'] = [Rule::requiredIf($shouldRequireStripeCredentials), 'nullable'];
+        $rules['stripe_secret'] = [Rule::requiredIf($shouldRequireStripeCredentials), 'nullable'];
+
+        return $rules;
     }
 }
