@@ -96,7 +96,24 @@ class AccountsController extends Controller
             $pages              = $this->instagramPages($access_token);
             $this->saveinstagramPages($pages);
         } elseif ($plat_form == 'linkedin') {
+            if ($request->has('error')) {
+                $message = $request->input('error_description', $request->input('error'));
+                Toastr::error('LinkedIn auth failed: '.$message);
+
+                return redirect()->route('client.accounts.index', ['plat_form' => $plat_form]);
+            }
+
             $oauth_access_token = $this->linkedInAccessToken($request->code);
+            if (! isset($oauth_access_token['access_token'])) {
+                $oauthError = $oauth_access_token['error_description']
+                    ?? $oauth_access_token['message']
+                    ?? $oauth_access_token['error']
+                    ?? 'access_token missing from LinkedIn response';
+
+                Toastr::error('LinkedIn token failed: '.$oauthError);
+
+                return redirect()->route('client.accounts.index', ['plat_form' => $plat_form]);
+            }
             $access_token       = $oauth_access_token['access_token'];
             $profile            = $this->linkedInProfile($access_token);
             $this->savelinkedInProfile($profile + $oauth_access_token);

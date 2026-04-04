@@ -128,8 +128,7 @@
                         <form action="{{ route('post.login') }}" class="ajax_form" method="POST">@csrf
                             <div class="heading__content">
                                 <h2 class="title">{{__('login')}}</h2>
-                                <p class="desc">{{__('have_an_account_yet')}}? <a
-                                            href="{{ route('register') }}">{{__('sign_up')}}</a></p>
+                                <p class="desc">Sign in to continue.</p>
                             </div>
                             <div class="form-group">
                                 <label for="email"> {{__('email')}} <span class="required">*</span> </label>
@@ -175,13 +174,6 @@
                             <div class="btn__group">
                                 <button type="submit" name="btn"
                                         class="sg-btn sg-btn-primary w-100">{{__('login')}}</button>
-                            </div>
-                            <div class="devider text-center"><span>{{__('sign_up_with')}}</span></div>
-                            <div class="login__action">
-                                <a href="javascript:void(0)"><i class="ri-facebook-circle-fill"></i>{{__('facebook')}}
-                                </a>
-                                <a href="javascript:void(0)"><i class="ri-google-fill"></i>{{__('google')}}</a>
-                                <a href="javascript:void(0)"><i class="ri-apple-fill"></i>{{__('apple')}}</a>
                             </div>
                             @if (isDemoMode())
                                 <div class="devider text-center"><span>{{__('login_as')}}</span></div>

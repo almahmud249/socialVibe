@@ -64,7 +64,7 @@ trait LinkedInAccountTrait
         $data = [
             'uid'                 => Str::uuid(),
             'platform_id'         => $profile['id_token'],
-            'subscription_id'     => auth()->user()->activeSubscription->id,
+            'subscription_id'     => optional(auth()->user()->activeSubscription)->id,
             'user_id'             => auth()->id(),
             'admin_id'            => auth()->id(),
             'account_id'          => $profile['sub'],
@@ -119,7 +119,7 @@ trait LinkedInAccountTrait
             DB::table('social_accounts')->insertOrIgnore([
                 'uid'                 => Str::uuid(),
                 'platform_id'         => $orgUrn,
-                'subscription_id'     => auth()->user()->activeSubscription->id,
+                'subscription_id'     => optional(auth()->user()->activeSubscription)->id,
                 'user_id'             => auth()->id(),
                 'admin_id'            => auth()->id(),
                 'account_id'          => $orgId,

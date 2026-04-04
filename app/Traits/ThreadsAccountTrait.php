@@ -73,7 +73,7 @@ trait ThreadsAccountTrait
         $data = [
             'uid'                    => Str::uuid(),
             'platform_id'            => $userData['id'],
-            'subscription_id'        => auth()->user()->activeSubscription->id,
+            'subscription_id'        => optional(auth()->user()->activeSubscription)->id,
             'user_id'                => auth()->id(),
             'admin_id'               => auth()->id(),
             'account_id'             => $userData['id'],
@@ -315,4 +315,3 @@ trait ThreadsAccountTrait
 
   
 }
-

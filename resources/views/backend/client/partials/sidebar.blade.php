@@ -112,29 +112,11 @@
 					</li>
 				@endcan
 
-				@can('manage_team')
-					<li
-							class="{{ menuActivation(['client/team-list', 'client/team/create', 'client/team/edit/*'], 'active') }}">
-						<a href="{{ route('client.team.index') }}">
-							<i class="las la-user-tie"></i>
-							<span>{{ __('team_member') }}</span>
-						</a>
-					</li>
-				@endcan
 				@can('manage_ticket')
 					<li class="{{ menuActivation(['client/tickets', 'client/tickets/*'], 'active') }}">
 						<a href="{{ route('client.tickets.index') }}">
 							<i class="las la-ticket-alt"></i>
 							<span>{{ __('support_ticket') }}</span>
-						</a>
-
-					</li>
-				@endcan
-				@can('manage_subscription')
-					<li class="{{ menuActivation(['client/my-subscription', 'available-plans'], 'active') }}">
-						<a href="{{ route('client.my.subscription') }}">
-							<i class="las la-cubes"></i>
-							<span>{{ __('my_subscription') }}</span>
 						</a>
 
 					</li>
@@ -167,8 +149,8 @@
 						</ul>
 					</li>
 				@else
-					<li class="{{ menuActivation(['client/my-subscription', 'available-plans'], 'active') }}">
-						<a href="{{ route('client.my.subscription') }}">
+					<li class="{{ menuActivation(['client/ai-writer'], 'active') }}">
+						<a href="{{ route('client.ai.writer') }}">
 							<i class="las la-robot"></i>
 							<span>{{ __('ai_writer') }}</span>
 						</a>
@@ -178,22 +160,18 @@
 
 				@can('manage_setting')
 					<li
-							class="{{ menuActivation(['client/whatsapp-settings', 'client/billing/details', 'client/telegram-settings', 'client/general-settings'], 'active') }}">
+							class="{{ menuActivation(['client/whatsapp-settings', 'client/telegram-settings', 'client/general-settings'], 'active') }}">
 						<a href="#setting" class="dropdown-icon" data-bs-toggle="collapse" role="button"
-						   aria-expanded="{{ menuActivation(['client/whatsapp-settings', 'client/billing/details', 'client/telegram-settings', 'client/general-settings'], 'true', 'false') }}"
+						   aria-expanded="{{ menuActivation(['client/whatsapp-settings', 'client/telegram-settings', 'client/general-settings'], 'true', 'false') }}"
 						   aria-controls="setting">
 							<i class="las la-tools"></i>
 							<span>{{ __('setting') }}</span>
 						</a>
-						<ul class="sub-menu collapse {{ menuActivation(['client/whatsapp-settings', 'client/billing/details', 'client/telegram-settings', 'client/general-settings'], 'show') }}"
+						<ul class="sub-menu collapse {{ menuActivation(['client/whatsapp-settings', 'client/telegram-settings', 'client/general-settings'], 'show') }}"
 						    id="setting" data-bs-parent="#accordionSidebar">
 							<li>
 								<a class="{{ menuActivation(['client/general-settings'], 'active') }}"
 								   href="{{ route('client.general.settings') }}">{{ __('general_setting') }}</a>
-							</li>
-							<li>
-								<a class="{{ menuActivation(['client/billing/details'], 'active') }}"
-								   href="{{ route('client.billing.details') }}">{{ __('billing_details') }}</a>
 							</li>
 						</ul>
 					</li>

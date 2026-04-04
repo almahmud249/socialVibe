@@ -59,7 +59,7 @@ trait TwitterAccountTrait
         $data = [
             'uid'                 => Str::uuid(),
             'platform_id'         => $profile['data']['id'],
-            'subscription_id'     => auth()->user()->activeSubscription->id,
+            'subscription_id'     => optional(auth()->user()->activeSubscription)->id,
             'user_id'             => auth()->id(),
             'admin_id'            => auth()->id(),
             'account_id'          => $profile['data']['id'],

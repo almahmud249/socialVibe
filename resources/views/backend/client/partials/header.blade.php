@@ -88,14 +88,6 @@
                                         <span>{{ __('profile') }}</span>
                                     </a>
                                 </li>
-                                @can('manage_subscription')
-                                    <li>
-                                        <a class="dropdown-item" href="{{ route('client.my.subscription') }}">
-                                            <i class="las la-money-bill-wave"></i>
-                                            <span>{{ __('my_subscription') }}</span>
-                                        </a>
-                                    </li>
-                                @endcan
                                 <li>
                                     <a class="dropdown-item" href="{{ route('client.profile.password-change') }}">
                                         <i class="las la-shield-alt"></i>
