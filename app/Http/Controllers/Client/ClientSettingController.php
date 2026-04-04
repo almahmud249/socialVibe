@@ -29,34 +29,16 @@ class ClientSettingController extends Controller
 
     public function billingDetails(Request $request)
     {
-        $data = [
-            'client' => $this->client->find(auth()->user()->client_id),
-        ];
+        Toastr::info('Billing settings are disabled in solo mode.');
 
-        return view('backend.client.setting.billing_details', $data);
+        return redirect()->route('client.dashboard');
     }
 
     public function storeBillingDetails(Request $request, $id)
     {
-        if (isDemoMode()) {
-            $data = [
-                'status'  => false,
-                'message' => __('this_function_is_disabled_in_demo_server'),
-                'title'   => 'error',
-            ];
+        Toastr::info('Billing settings are disabled in solo mode.');
 
-            return response()->json($data);
-        }
-        try {
-            $this->repo->billingDetailsupdate($request, $id);
-            Toastr::success(__('update_successful'));
-
-            return back();
-        } catch (Exception $e) {
-            Toastr::error(__('something_went_wrong_please_try_again'));
-
-            return back();
-        }
+        return redirect()->route('client.dashboard');
     }
 
     public function generalSettings(Request $request)

@@ -42,15 +42,17 @@ class RegisteredUserController extends Controller
 
     public function create()
     {
-        $data = [
-            'contents' => $this->authContentRepository->activeContent(),
-        ];
+        Toastr::info('Registration is disabled in solo mode.');
 
-        return view('backend.admin.auth.register', $data);
+        return redirect()->route('login');
     }
 
     public function store(SignUpRequest $request)
     {
+        Toastr::info('Registration is disabled in solo mode.');
+
+        return redirect()->route('login');
+
         DB::beginTransaction();
         try {
             if (setting('is_recaptcha_activated')) {

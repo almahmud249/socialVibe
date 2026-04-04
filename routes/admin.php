@@ -40,7 +40,6 @@ use App\Http\Controllers\Admin\WebsiteUniqueFeatureController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Client\AccountsController;
 use App\Http\Controllers\Client\PostController;
-use App\Http\Controllers\Client\TeamController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('client-staff', [ClientController::class, 'clientStaff'])->name('client_staff.list');
@@ -294,7 +293,11 @@ Route::group(['prefix' => localeRoutePrefix()], function () {
     Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'verified']], function () {
         Route::post('onesignal-subscription', [AdminController::class, 'oneSignalSubscription'])->name('admin.onesignal');
         Route::post('staffs-status', [StaffController::class, 'statusChange'])->name('staffs.status');
-        Route::post('team-status', [TeamController::class, 'statusChange'])->name('team.status');
+        Route::post('team-status', fn () => response()->json([
+            'status'  => 200,
+            'message' => 'Team management is disabled in solo mode.',
+            'title'   => 'success',
+        ]))->name('team.status');
         Route::post('contact-status', [PostController::class, 'statusChange'])->name('contact.status');
         Route::get('change-role', [StaffController::class, 'changeRole'])->name('staffs.change-role');
         Route::post('clients-status', [ClientController::class, 'statusChange'])->name('clients.organizations-status');
