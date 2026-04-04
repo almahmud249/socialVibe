@@ -266,7 +266,7 @@
                                             {{--                                            <img src="{{ getFileLink('original_image',  $content->image,null,'400X387') }}" alt="avatar" />--}}
                                         </div>
                                         <div class="login__content">
-                                            <h4 class="title">{{  $content->language->title }}
+                                            <h4 class="title">{{ $content->lang_title }}
                                             </h4>
                                         </div>
                                     </div>
@@ -343,4 +343,3 @@
 </script>
 </body>
 </html>
-
